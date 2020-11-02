@@ -1,8 +1,9 @@
 import './App.css';
 import React, {Component} from "react";
-import Toolbar from "./components/ToolBar/Toolbar";
-import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Backdrop from "./components/Backdrop/Backdrop";
+import SearchAppBar from "./components/SearchAppBar/SearchAppBar";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+import Albums from "./components/Albums/Albums";
 
 class App extends Component {
     state = {
@@ -24,12 +25,13 @@ class App extends Component {
             backdrop = <Backdrop clickBackdrop={this.backdropClickHandler}/>
         }
         return (
-            <div style={{height: '100%'}}>
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+            <div>
+                {/*<Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>*/}
+                <SearchAppBar drawerClickHandler={this.drawerToggleClickHandler}/>
                 <SideDrawer showSideDrawer={this.state.sideDrawerOpen}/>
                 {backdrop}
-                <main style={{marginTop: '64px'}}>
-                    <p>This is a page Content</p>
+                <main style={{margin: '1rem'}}>
+                    <Albums/>
                 </main>
             </div>
         );
