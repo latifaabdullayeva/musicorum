@@ -11,11 +11,11 @@ const useStyles = makeStyles({
         margin: '1.5rem'
     },
     media: {
-        height: 140,
+        height: 280,
     },
 });
 
-function CardElement(title) {
+function CardElement(props) {
     const classes = useStyles();
 
     return (
@@ -23,12 +23,12 @@ function CardElement(title) {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78"
+                    image={props.cover}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {title.title}
+                        {props.title}
                     </Typography>
                 </CardContent>
             </CardActionArea>

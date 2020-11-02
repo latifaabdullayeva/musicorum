@@ -22,12 +22,16 @@ class Albums extends Component {
     }
 
     componentDidMount() {
-        getAlbums().then(data => {
-            let albumTitles = [];
-            for (let i = 0; i < data.data.length; i++) {
-                albumTitles.push(data.data[i].title);
+        getAlbums().then(response => {
+            let albums = [];
+            for (let i = 0; i < response.data.length; i++) {
+                const album = {
+                    title: response.data[i].title,
+                    coverImage: response.data[i].picture_big
+                }
+                albums.push(album);
             }
-            this.setState({albumList: albumTitles})
+            this.setState({albumList: albums})
         })
     }
 
@@ -40,7 +44,7 @@ class Albums extends Component {
                     {albumList.map(album => {
                         return (
                             <Grid item xs={3} key={album}>
-                                <CardElement key={album} title={album}/>
+                                <CardElement key={album} title={album.title} cover={album.coverImage}/>
                             </Grid>
                         );
                     })}
