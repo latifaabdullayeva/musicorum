@@ -1,6 +1,5 @@
 import React from "react";
 import './SideDrawer.css';
-import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -11,8 +10,6 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import StarsIcon from '@material-ui/icons/Stars';
 import AlbumIcon from '@material-ui/icons/Album';
 import MusicControlCard from "../MusicControl/MusicControl";
-
-const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
