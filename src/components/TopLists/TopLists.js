@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Charts() {
+function TopLists() {
     const classes = useStyles();
 
     function FormRow() {
@@ -59,4 +59,4 @@ function Charts() {
     );
 }
 
-export default Charts;
+export default TopLists;
