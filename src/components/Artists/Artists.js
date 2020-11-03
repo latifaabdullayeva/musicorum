@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import ArtistElement from "./ArtistElement";
 
 function getArtists() {
-    return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/artist/artists?limit=100')
+    return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/artist/artists?limit=21')
         .then(res => {
             if (res.ok) {
                 console.log('SUCCESS');
@@ -26,8 +26,9 @@ class Artists extends Component {
             let artists = [];
             for (let i = 0; i < response.data.length; i++) {
                 const artist = {
-                    title: response.data[i].name,
-                    coverImage: response.data[i].picture_big
+                    name: response.data[i].name,
+                    coverImage: response.data[i].picture_big,
+                    artistId: response.data[i].artistId
                 }
                 artists.push(artist);
             }
@@ -40,11 +41,14 @@ class Artists extends Component {
         return (
             <div>
                 <h1>Top Artists</h1>
-                <Grid container spacing={1}>
+                <Grid container>
                     {artistList.map(artist => {
                         return (
-                            <Grid item xs={3} key={artist}>
-                                <ArtistElement key={artist} title={artist.title} cover={artist.coverImage}/>
+                            <Grid item xs={12} sm={6} md={4} lg={3}
+                                  style={{justify: 'space-between'}}
+                                  key={artist.artistId}>
+                                <ArtistElement
+                                    key={artist.artistId} name={artist.name} cover={artist.coverImage}/>
                             </Grid>
                         );
                     })}
