@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Grid from "@material-ui/core/Grid";
-import CardElement from "../CardElement/CardElement";
+import AlbumElement from "./AlbumElement";
 
 function getAlbums() {
     return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/playlists?limit=20')
@@ -44,7 +44,7 @@ class Albums extends Component {
                     {albumList.map(album => {
                         return (
                             <Grid item xs={3} key={album}>
-                                <CardElement key={album} title={album.title} cover={album.coverImage}/>
+                                <AlbumElement key={album} title={album.title} cover={album.coverImage}/>
                             </Grid>
                         );
                     })}

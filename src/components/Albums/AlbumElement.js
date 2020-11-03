@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
 });
 
-function CardElement(props) {
+function AlbumElement(props) {
     const classes = useStyles();
 
     return (
@@ -36,4 +36,4 @@ function CardElement(props) {
     );
 }
 
-export default CardElement;
+export default AlbumElement;
