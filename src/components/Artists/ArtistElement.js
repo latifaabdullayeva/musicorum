@@ -9,27 +9,27 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
         margin: '1.5rem',
-        maxHeight: '250px'
     },
     media: {
-        height: 200,
+        height: 0,
+        paddingTop: '100%',
+        borderRadius: '8px',
     },
 });
 
 function ArtistElement(props) {
     const classes = useStyles();
-
     return (
         <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia
-                    className={classes.media}
-                    image={props.cover}
-                    title={props.title}
+            <CardActionArea style={{borderRadius: '8px'}}>
+                <CardMedia className={classes.media}
+                           image={props.cover}
+                           src={props.cover}
+                           name={props.name}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="subtitle2" component="subtitle2">
-                        {props.title}
+                    <Typography gutterBottom variant="body1" component="span">
+                        {props.name}
                     </Typography>
                 </CardContent>
             </CardActionArea>
