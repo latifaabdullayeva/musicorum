@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         backgroundColor: "#fd9e7f",
         opacity: '0.8',
-        height: '0.5rem',
+        height: '0.8rem',
         justifyContent: 'center'
     },
 }));
