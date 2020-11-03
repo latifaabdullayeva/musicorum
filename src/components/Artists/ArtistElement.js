@@ -8,14 +8,15 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-        margin: '1.5rem'
+        margin: '1.5rem',
+        maxHeight: '250px'
     },
     media: {
-        height: 280,
+        height: 200,
     },
 });
 
-function AlbumElement(props) {
+function ArtistElement(props) {
     const classes = useStyles();
 
     return (
@@ -24,10 +25,10 @@ function AlbumElement(props) {
                 <CardMedia
                     className={classes.media}
                     image={props.cover}
-                    title="Contemplative Reptile"
+                    title={props.title}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="subtitle2" component="subtitle2">
                         {props.title}
                     </Typography>
                 </CardContent>
@@ -36,4 +37,4 @@ function AlbumElement(props) {
     );
 }
 
-export default AlbumElement;
+export default ArtistElement;

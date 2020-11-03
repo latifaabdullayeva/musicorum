@@ -1,9 +1,11 @@
 import './App.css';
 import React, {Component} from "react";
-import Backdrop from "./components/Backdrop/Backdrop";
-import SearchAppBar from "./components/SearchAppBar/SearchAppBar";
+import ToolBar from "./components/ToolBar/ToolBar";
+import Artists from "./components/Artists/Artists";
+import Grid from "@material-ui/core/Grid";
+import SideMenu from "./components/SideMenu/SideMenu";
+import Backdrop from "./components/BackDrop/Backdrop";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
-import Albums from "./components/Albums/Albums";
 
 class App extends Component {
     state = {
@@ -14,7 +16,6 @@ class App extends Component {
             return {sideDrawerOpen: !prevState.sideDrawerOpen}
         })
     }
-
     backdropClickHandler = () => {
         this.setState({sideDrawerOpen: false})
     }
@@ -26,16 +27,21 @@ class App extends Component {
         }
         return (
             <div>
-                {/*<Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>*/}
-                <SearchAppBar drawerClickHandler={this.drawerToggleClickHandler}/>
+                <ToolBar drawerClickHandler={this.drawerToggleClickHandler}/>
                 <SideDrawer showSideDrawer={this.state.sideDrawerOpen}/>
                 {backdrop}
-                <main style={{margin: '1rem'}}>
-                    <Albums/>
-                </main>
+                <Grid container spacing={1}>
+                    <Grid item md={3}>
+                        <SideMenu/>
+                    </Grid>
+                    <Grid item md={9} style={{padding: '0.5rem'}}>
+                        <Artists/>
+                    </Grid>
+                </Grid>
             </div>
         );
     }
 }
 
+/// xs sm md lg
 export default App;
