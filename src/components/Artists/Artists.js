@@ -1,15 +1,17 @@
 import React, {Component} from "react";
 import Grid from "@material-ui/core/Grid";
 import ArtistElement from "./ArtistElement";
+import ArtistTracks from "./ArtistTracks";
+import Typography from "@material-ui/core/Typography";
 
 function getArtists() {
     return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/artist/artists?limit=21')
         .then(res => {
             if (res.ok) {
-                console.log('SUCCESS');
+                console.log('SUCCESS on getting artists');
                 return res.json()
             } else {
-                console.log('FAILURE');
+                console.log('FAILURE on getting artists');
                 throw new Error("Error res.ok false")
             }
         })
@@ -28,7 +30,8 @@ class Artists extends Component {
                 const artist = {
                     name: response.data[i].name,
                     coverImage: response.data[i].picture_big,
-                    artistId: response.data[i].artistId
+                    artistId: response.data[i].id,
+                    trackList: response.data[i].tracklist
                 }
                 artists.push(artist);
             }
@@ -40,15 +43,17 @@ class Artists extends Component {
         let artistList = this.state.artistList;
         return (
             <div>
-                <h1>Top Artists</h1>
+                <Typography variant="h4" component="h4">Top Artists</Typography>
                 <Grid container>
                     {artistList.map(artist => {
                         return (
                             <Grid item xs={12} sm={6} md={4} lg={3}
                                   style={{justify: 'space-between'}}
-                                  key={artist.artistId}>
-                                <ArtistElement
-                                    key={artist.artistId} name={artist.name} cover={artist.coverImage}/>
+                                  key={artist.id}>
+                                <ArtistElement key={artist.artistId}
+                                               name={artist.name}
+                                               cover={artist.coverImage}/>
+                                {/*<ArtistTracks trackList={artist.trackList}/>*/}
                             </Grid>
                         );
                     })}
