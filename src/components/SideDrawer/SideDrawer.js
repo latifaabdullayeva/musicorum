@@ -1,20 +1,16 @@
 import React from "react";
 import './SideDrawer.css';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
-import MicNoneIcon from '@material-ui/icons/MicNone';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import StarsIcon from '@material-ui/icons/Stars';
-import AlbumIcon from '@material-ui/icons/Album';
 import MusicControlCard from "../SideMenu/MusicControl/MusicControl";
+import SideMenuList from "../SideMenu/SideMenuList/SideMenuList";
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         ...theme.mixins.toolbar,
-        backgroundColor: '#fd9e7f', color: '#ffffff', marginBottom: '-0.5rem',
+        backgroundColor: '#fd9e7f',
+        color: '#ffffff',
+        marginBottom: '-0.5rem',
     },
     title: {
         position: 'center',
@@ -49,25 +45,7 @@ function SideDrawer(props) {
                     LOGO
                 </Typography>
             </div>
-            <List>
-                <ListItem button key={'Albums'} className={classes.listItemSelected}>
-                    <AlbumIcon style={{marginRight: '0.5rem'}}/>
-                    <ListItemText primary={'Albums'}/>
-                </ListItem>
-                <ListItem button key={'Genres'} className={classes.listItemSelected}>
-                    <MusicNoteIcon style={{marginRight: '0.5rem'}}/>
-                    <ListItemText primary={'Genres'}/>
-                </ListItem>
-                <ListItem button key={'Podcasts'} className={classes.listItemSelected}>
-                    <MicNoneIcon style={{marginRight: '0.5rem'}}/>
-                    <ListItemText primary={'Podcasts'}/>
-                </ListItem>
-                <ListItem button key={'Top Lists'} className={classes.listItemSelected}>
-                    <StarsIcon style={{marginRight: '0.5rem'}}/>
-                    <ListItemText primary={'Top Lists'}/>
-                </ListItem>
-            </List>
-
+            <SideMenuList/>
             <MusicControlCard style={{alignSelf: 'flex-end'}}/>
         </nav>
     )
