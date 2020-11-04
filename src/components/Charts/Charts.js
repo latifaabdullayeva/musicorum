@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import ChartPlaylistItems from "./ChartPlaylistItems";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
-function getChartPlaylists() {
+function getCharts() {
     return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0')
         .then(res => {
             if (res.ok) {
@@ -15,13 +17,13 @@ function getChartPlaylists() {
         .catch(error => console.log('ERROR' + error.message));
 }
 
-class ChartPlaylists extends Component {
+class Charts extends Component {
     state = {
         chartList: [] // charts = [{title, trackNums}, {title, trackNums}, {} ...]
     }
 
     componentDidMount() {
-        getChartPlaylists().then(response => {
+        getCharts().then(response => {
             let charts = []; // [{title, trackNums}, {title, trackNums}, {} ...]
             for (let i = 0; i < response.playlists.data.length; i++) {
                 const chart = {
@@ -38,26 +40,45 @@ class ChartPlaylists extends Component {
 
     render() {
         let chartList = this.state.chartList;
+
+        console.log(chartList)
         return (
-            <div>
-                {chartList.map(chart => {
-                    return (
-                        <ChartPlaylistItems key={chart.chartPlaylistId}
-                                            title={chart.title}
-                                            trackNumbs={chart.trackNums}
-                                            coverImage={chart.coverImage}
-                        />
-                    )
-                })}
-            </div>
+            <Grid container spacing={1} style={{justifyContent: 'center'}}>
+                <Grid item xs={12}>
+                    <Typography gutterBottom variant="h3" component="h3">
+                        Top Playlists
+                    </Typography>
+                    <ChartPlaylistItems key={chartList.chartPlaylistId}
+                                        chartList={chartList}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography gutterBottom variant="h3" component="h3">
+                        Top Albums
+                    </Typography>
+                    <ChartPlaylistItems key={chartList.chartPlaylistId}
+                                        chartList={chartList}/>
+                </Grid>
+
+            </Grid>
+
         );
     }
 }
 
-export default ChartPlaylists;
+export default Charts;
 
 // response.tracks.data
 // response.albums.data
 // response.artists.data
 // response.playlists.data
 // response.podcasts.data
+
+/*{chartList.map(chart => {*/
+/*    return (*/
+/*        <ChartPlaylistItems key={chart.chartPlaylistId}*/
+/*                            title={chart.title}*/
+/*                            trackNumbs={chart.trackNums}*/
+/*                            coverImage={chart.coverImage}*/
+/*        />*/
+/*    )*/
+/*})}*/
