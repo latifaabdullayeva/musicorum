@@ -1,86 +1,68 @@
-import React, {useState} from 'react';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-
-const chartItemNumbers = [
-    {
-        label: 'San Francisco – Oakland Bay Bridge, United States',
-        imgPath:
-            'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-    },
-    {
-        label: 'Bird',
-        imgPath:
-            'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-    },
-];
+import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
+import CircularProgress from "@material-ui/core/CircularProgress";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+import IconButton from "@material-ui/core/IconButton";
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: '1rem',
-    },
-    header: {
         display: 'flex',
-        alignItems: 'center',
-        height: 80,
-        backgroundColor: theme.palette.background.default,
-        borderRadius: '1rem 1rem 0rem 0rem',
-    },
-    img: {
-        height: 300,
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
         overflow: 'hidden',
-        display: 'block',
-        width: '100%',
+        backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+        flexWrap: 'nowrap',
+        transform: 'translateZ(0)',
+    },
+    title: {
+        color: theme.palette.primary.light,
+    },
+    titleBar: {
+        background:
+            'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
 }));
 
-function ChartItems() {
+function ChartPlaylistItems(props) {
     const classes = useStyles();
-    const theme = useTheme();
-    const [activeChartItems, setActiveChartItems] = useState(0);
-    const maxChartItems = chartItemNumbers.length;
 
-    const handleNext = () => {
-        setActiveChartItems((prevActiveChartItem) => prevActiveChartItem + 1);
-    };
+    if (props.chartList.length > 0) {
+        return (
+            <div className={classes.root}>
+                <GridList className={classes.gridList} cols={2.5}>
+                    {props.chartList.map((chartList) => (
+                        <GridListTile key={chartList.coverImage}>
+                            <img src={chartList.coverImage} alt={chartList.title}/>
+                            <GridListTileBar
+                                title={chartList.title}
+                                classes={{
+                                    root: classes.titleBar,
+                                    title: classes.title,
+                                }}
+                                actionIcon={
+                                    <IconButton aria-label={`star ${chartList.title}`}>
+                                        <StarBorderIcon className={classes.title}/>
+                                    </IconButton>
+                                }
+                            />
+                        </GridListTile>
+                    ))}
+                </GridList>
+            </div>
+        );
+    } else {
+        return (
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <CircularProgress disableShrink style={{color: "#fd9e7f"}}/>
+            </div>
 
-    const handleBack = () => {
-        setActiveChartItems((prevActiveChartItem) => prevActiveChartItem - 1);
-    };
-
-    return (
-        <div className={classes.root}>
-            <Paper square elevation={0} className={classes.header}>
-                <Typography variant="h5" component="h5">
-                    {chartItemNumbers[activeChartItems].label}
-                </Typography>
-            </Paper>
-            <img
-                className={classes.img}
-                src={chartItemNumbers[activeChartItems].imgPath}
-                alt={chartItemNumbers[activeChartItems].label}
-            />
-            <MobileStepper style={{backgroundColor: "#ebebeb"}} steps={maxChartItems}
-                           position="static" variant="text" activeStep={activeChartItems}
-                           nextButton={
-                               <Button size="small" onClick={handleNext}
-                                       disabled={activeChartItems === maxChartItems - 1}>Next
-                                   {theme.direction === 'rtl' ? <KeyboardArrowLeft/> : <KeyboardArrowRight/>}
-                               </Button>
-                           }
-                           backButton={
-                               <Button size="small" onClick={handleBack} disabled={activeChartItems === 0}>
-                                   {theme.direction === 'rtl' ? <KeyboardArrowRight/> : <KeyboardArrowLeft/>}Back
-                               </Button>
-                           }
-            />
-        </div>
-    );
+        )
+    }
 }
 
-export default ChartItems;
+export default ChartPlaylistItems;
