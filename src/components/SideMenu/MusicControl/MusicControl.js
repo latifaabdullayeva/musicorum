@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import {Pause} from "@material-ui/icons";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         display: 'flex',
         backgroundColor: "#fd9e7f",
@@ -30,26 +31,39 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function MusicControlCard() {
+function MusicControlCard(props) {
     const classes = useStyles();
     const theme = useTheme();
+
+    console.log(props)
+    let myAudio = new Audio('https://cdns-preview-8.dzcdn.net/stream/c-8d3593a371dc66e92d7229f215485a64-5.mp3');
+    function togglePlay() {
+        myAudio.play();
+    }
+
+    function togglePause() {
+        myAudio.pause();
+    }
 
     return (
         <Card className={classes.root}>
             <CardContent className={classes.content}>
                 <Typography component="h6" variant="h6">
-                    Live From Space
+                    {props.title}
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                    Mac Miller
+                    {props.artistName}
                 </Typography>
             </CardContent>
             <CardContent className={classes.controls}>
                 <IconButton aria-label="previous">
                     {theme.direction === 'rtl' ? <SkipNextIcon/> : <SkipPreviousIcon/>}
                 </IconButton>
-                <IconButton aria-label="play/pause">
-                    <PlayArrowIcon className={classes.playIcon}/>
+                <IconButton aria-label="play/pause" onClick={togglePlay}>
+                    <PlayArrowIcon/>
+                </IconButton>
+                <IconButton aria-label="play/pause" onClick={togglePause}>
+                    <Pause/>
                 </IconButton>
                 <IconButton aria-label="next">
                     {theme.direction === 'rtl' ? <SkipPreviousIcon/> : <SkipNextIcon/>}
