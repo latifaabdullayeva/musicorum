@@ -49,7 +49,7 @@ class Artists extends Component {
                             return (
                                 <Grid item xs={12} sm={6} md={4} lg={3}
                                       style={{justify: 'space-between'}}
-                                      key={artist.id}>
+                                      key={artist.artistId}>
                                     <ArtistElement key={artist.artistId}
                                                    name={artist.name}
                                                    cover={artist.coverImage}/>
