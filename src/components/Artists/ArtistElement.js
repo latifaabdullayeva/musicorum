@@ -5,7 +5,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import {Link} from "react-router-dom";
@@ -22,15 +21,15 @@ const useStyles = makeStyles({
 });
 
 function ArtistElement(props) {
-
     const classes = useStyles();
 
-    const [background, setBackground] = useState("null");
+    const [background, setBackground] = useState("rgba(0,0,0,0.5)");
 
     const clickHandler = () => {
         setBackground("#fd9e7f")
     }
     const styles = {
+        margin: '0rem 1rem 0.5rem 1rem',
         color: background
     };
 
@@ -49,13 +48,8 @@ function ArtistElement(props) {
                         </Typography>
                     </CardContent>
                 </Link>
-                <IconButton aria-label="add to favorites"
-                            onClick={clickHandler} style={styles}>
-                    <FavoriteIcon/>
-                </IconButton>
-                <IconButton aria-label="share">
-                    <ShareIcon/>
-                </IconButton>
+                <FavoriteIcon onClick={clickHandler} style={styles}/>
+                <ShareIcon style={{color: 'rgba(0,0,0,0.5)', margin: '0rem 0rem 0.5rem 0rem'}}/>
             </CardActionArea>
         </Card>
     );

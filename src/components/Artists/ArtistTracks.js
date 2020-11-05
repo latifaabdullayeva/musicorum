@@ -1,9 +1,8 @@
 import React from 'react';
 
 function getArtistTracks(some) {
-    let artistTracksURL = 'https://api.deezer.com/artist/' + some + '/top?limit=50';
-    console.log(artistTracksURL);
-    fetch('https://cors-anywhere.herokuapp.com/' + artistTracksURL + '')
+    console.log(some);
+    fetch('https://cors-anywhere.herokuapp.com/' + some + '')
         .then(res => {
             if (res.ok) {
                 console.log('SUCCESS');
