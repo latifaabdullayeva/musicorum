@@ -9,7 +9,7 @@ import AlbumIcon from '@material-ui/icons/Album';
 import List from "@material-ui/core/List";
 import {Link} from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     wrapper: {
         paddingTop: '8rem',
         paddingBottom: '8rem',
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SideMenuLists(props) {
+function SideMenuLists() {
     const classes = useStyles();
 
     return (
