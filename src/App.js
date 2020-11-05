@@ -7,9 +7,9 @@ import SideMenu from "./components/SideMenu/SideMenu";
 import Backdrop from "./components/BackDrop/Backdrop";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import ArtistTracks from "./components/Artists/ArtistTracks";
 import Charts from "./components/Charts/Charts";
-import Test from "./components/Test";
+import Tracks from "./components/Tracks/Tracks";
+import Podcasts from "./components/Podcasts/Podcasts";
 
 class App extends Component {
     state = {
@@ -44,7 +44,8 @@ class App extends Component {
                                 <Route path='/' exact component={Artists}/>
                                 <Route path='/artists' exact component={Artists}/>
                                 <Route path='/charts' component={Charts}/>
-                                <Route path='/artistTracks' component={ArtistTracks}/>
+                                <Route path='/tracks' component={Tracks}/>
+                                <Route path='/podcasts' component={Podcasts}/>
                                 {/*<Route path='/test' component={Test}/>*/}
                                 {/*<Route path="/genres" component={Genres}></Route>*/}
                                 {/*<Route path="/podcasts" component={Podcasts}></Route>*/}
