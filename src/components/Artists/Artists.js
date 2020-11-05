@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import Grid from "@material-ui/core/Grid";
 import ArtistElement from "./ArtistElement";
-import ArtistTracks from "./ArtistTracks";
-import Typography from "@material-ui/core/Typography";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 function getArtists() {
     return fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/artist/artists?limit=21')
@@ -41,25 +40,35 @@ class Artists extends Component {
 
     render() {
         let artistList = this.state.artistList;
-        return (
-            <div>
-                <Typography variant="h4" component="h4">Top Artists</Typography>
-                <Grid container>
-                    {artistList.map(artist => {
-                        return (
-                            <Grid item xs={12} sm={6} md={4} lg={3}
-                                  style={{justify: 'space-between'}}
-                                  key={artist.id}>
-                                <ArtistElement key={artist.artistId}
-                                               name={artist.name}
-                                               cover={artist.coverImage}/>
-                                {/*<ArtistTracks trackList={artist.trackList}/>*/}
-                            </Grid>
-                        );
-                    })}
-                </Grid>
-            </div>
-        );
+        if (artistList.length > 0) {
+            return (
+                <div>
+                    {/*<Typography variant="h3" component="h3" style={{color: 'rgba(0,0,0,0.7)'}}>Top Artists</Typography>*/}
+                    <Grid container>
+                        {artistList.map(artist => {
+                            return (
+                                <Grid item xs={12} sm={6} md={4} lg={3}
+                                      style={{justify: 'space-between'}}
+                                      key={artist.id}>
+                                    <ArtistElement key={artist.artistId}
+                                                   name={artist.name}
+                                                   cover={artist.coverImage}/>
+                                    {/*<ArtistTracks trackList={artist.trackList}/>*/}
+                                </Grid>
+                            );
+                        })}
+                    </Grid>
+                </div>
+            );
+        } else {
+            return (
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <CircularProgress disableShrink style={{color: "#fd9e7f"}}/>
+                </div>
+
+            )
+        }
+
     }
 }
 
