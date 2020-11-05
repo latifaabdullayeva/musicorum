@@ -2,7 +2,6 @@ import React from "react";
 import './SideDrawer.css';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
-import MusicControlCard from "../SideMenu/MusicControl/MusicControl";
 import SideMenuList from "../SideMenu/SideMenuList/SideMenuList";
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +45,7 @@ function SideDrawer(props) {
                 </Typography>
             </div>
             <SideMenuList/>
-            <MusicControlCard style={{alignSelf: 'flex-end'}}/>
+            {/*<MusicControlCard style={{alignSelf: 'flex-end'}}/>*/}
         </nav>
     )
 }

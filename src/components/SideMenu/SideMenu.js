@@ -1,5 +1,4 @@
 import React from "react";
-import MusicControlCard from "./MusicControl/MusicControl";
 import Grid from "@material-ui/core/Grid";
 import SideMenuList from "./SideMenuList/SideMenuList";
 import {makeStyles} from "@material-ui/core/styles";
@@ -23,7 +22,7 @@ function SideMenu() {
     return (
         <Grid className={classes.root}>
             <SideMenuList/>
-            <MusicControlCard style={{flex: '0'}}/>
+            {/*<MusicControlCard style={{flex: '0'}}/>*/}
         </Grid>
     )
 }

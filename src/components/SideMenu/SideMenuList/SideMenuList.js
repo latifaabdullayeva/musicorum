@@ -38,20 +38,20 @@ function SideMenuLists(props) {
     return (
         <List className={classes.wrapper}>
             <Link to="/artists" style={{textDecoration: 'none'}}>
-                <ListItem button key={'Artists'} selected={true}
+                <ListItem button key={'Artists'}
                           className={classes.listItemSelected}>
                     <AlbumIcon style={{marginRight: '0.5rem'}}/>
                     <ListItemText primary={'Artists'}/>
                 </ListItem>
             </Link>
-            <Link to="/" style={{textDecoration: 'none'}}>
-                <ListItem button key={'Genres'}
+            <Link to="/tracks" style={{textDecoration: 'none'}}>
+                <ListItem button key={'Tracks'}
                           className={classes.listItemSelected}>
                     <MusicNoteIcon style={{marginRight: '0.5rem'}}/>
-                    <ListItemText primary={'Genres'}/>
+                    <ListItemText primary={'Tracks'}/>
                 </ListItem>
             </Link>
-            <Link to="/" style={{textDecoration: 'none'}}>
+            <Link to="/podcasts" style={{textDecoration: 'none'}}>
                 <ListItem button key={'Podcasts'}
                           className={classes.listItemSelected}>
                     <MicNoneIcon style={{marginRight: '0.5rem'}}/>
