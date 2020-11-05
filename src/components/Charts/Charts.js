@@ -42,7 +42,8 @@ function setPodcastListsState(response) {
             title: response.podcasts.data[i].title,
             description: response.podcasts.data[i].description,
             coverImage: response.podcasts.data[i].picture_big,
-            chartPodcastId: response.podcasts.data[i].id
+            chartPodcastId: response.podcasts.data[i].id,
+            fans: response.podcasts.data[i].fans
         }
         chartPodcasts.push(chartPodcast)
     }
@@ -51,7 +52,6 @@ function setPodcastListsState(response) {
 
 function setAlbumListsState(response) {
     let chartAlbums = [];
-    console.log(response);
     for (let i = 0; i < response.albums.data.length; i++) {
         const chartAlbum = {
             title: response.albums.data[i].title,
