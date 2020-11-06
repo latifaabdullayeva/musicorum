@@ -35,8 +35,10 @@ function MusicControlCard(props) {
     const classes = useStyles();
     const theme = useTheme();
 
-    console.log(props)
+    console.log(props.artistName + " ... " + props.open.title)
+
     let myAudio = new Audio('https://cdns-preview-8.dzcdn.net/stream/c-8d3593a371dc66e92d7229f215485a64-5.mp3');
+
     function togglePlay() {
         myAudio.play();
     }
@@ -49,10 +51,10 @@ function MusicControlCard(props) {
         <Card className={classes.root}>
             <CardContent className={classes.content}>
                 <Typography component="h6" variant="h6">
-                    {props.title}
+                    {props.open.title ? props.open.title : 'Song title'}
                 </Typography>
                 <Typography variant="subtitle1" color="textSecondary">
-                    {props.artistName}
+                    {props.artistName ? props.artistName : 'Artist'}
                 </Typography>
             </CardContent>
             <CardContent className={classes.controls}>
