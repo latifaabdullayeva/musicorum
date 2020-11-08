@@ -5,7 +5,7 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        borderRight: '0.1em solid rgba(0,0,0,0.2)',
+        // borderRight: '0.1em solid rgba(0,0,0,0.2)',
         height: '45rem',
         flexDirection: 'column',
         display: 'none',

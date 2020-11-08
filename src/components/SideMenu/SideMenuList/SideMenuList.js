@@ -6,6 +6,7 @@ import MicNoneIcon from '@material-ui/icons/MicNone';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import StarsIcon from '@material-ui/icons/Stars';
 import AlbumIcon from '@material-ui/icons/Album';
+import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import List from "@material-ui/core/List";
 import {Link} from "react-router-dom";
 
@@ -37,6 +38,13 @@ function SideMenuLists() {
 
     return (
         <List className={classes.wrapper}>
+            <Link to="/explore" style={{textDecoration: 'none'}}>
+                <ListItem button key={'Search'}
+                          className={classes.listItemSelected}>
+                    <ViewModuleIcon style={{marginRight: '0.5rem'}}/>
+                    <ListItemText primary={'Explore'}/>
+                </ListItem>
+            </Link>
             <Link to="/artists" style={{textDecoration: 'none'}}>
                 <ListItem button key={'Artists'}
                           className={classes.listItemSelected}>

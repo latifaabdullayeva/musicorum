@@ -25,9 +25,9 @@ function TrackItems(props) {
     const handleClickOpen = () => {
         setOpen(props);
     };
-    const handleClose = () => {
-        setOpen(false);
-    };
+    // const handleClose = () => {
+    //     setOpen(false);
+    // };
 
     return (
         <Card className={classes.root}>
