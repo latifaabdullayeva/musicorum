@@ -42,7 +42,7 @@ class App extends Component {
                         </Grid>
                         <Grid item md={9} xs={12} style={{}}>
                             <Switch>
-                                <Route path='/' exact component={Search}/>
+                                <Route path='/musicorum' exact component={Search}/>
                                 <Route path='/explore' exact component={Search}/>
                                 <Route path='/artists' exact component={Artists}/>
                                 <Route path='/charts' component={Charts}/>
