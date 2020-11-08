@@ -3,6 +3,7 @@ import './SideDrawer.css';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
 import SideMenuList from "../SideMenu/SideMenuList/SideMenuList";
+import MLogoTransparent from "../../MLogoTransparent.png";
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
@@ -41,7 +42,8 @@ function SideDrawer(props) {
              style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
             <div className={classes.toolbar}>
                 <Typography className={classes.title} variant="h6" noWrap>
-                    LOGO
+                    <img src={MLogoTransparent} alt={'logo'}
+                         style={{height: '2rem',}}/>
                 </Typography>
             </div>
             <SideMenuList/>
