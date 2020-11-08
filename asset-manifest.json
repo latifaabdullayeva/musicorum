@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/musicorum/static/css/main.753df677.chunk.css",
-    "main.js": "/musicorum/static/js/main.1f010b52.chunk.js",
-    "main.js.map": "/musicorum/static/js/main.1f010b52.chunk.js.map",
+    "main.js": "/musicorum/static/js/main.ce98543e.chunk.js",
+    "main.js.map": "/musicorum/static/js/main.ce98543e.chunk.js.map",
     "runtime-main.js": "/musicorum/static/js/runtime-main.e7930d1f.js",
     "runtime-main.js.map": "/musicorum/static/js/runtime-main.e7930d1f.js.map",
     "static/js/2.922a2653.chunk.js": "/musicorum/static/js/2.922a2653.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.e7930d1f.js",
     "static/js/2.922a2653.chunk.js",
     "static/css/main.753df677.chunk.css",
-    "static/js/main.1f010b52.chunk.js"
+    "static/js/main.ce98543e.chunk.js"
   ]
 }
