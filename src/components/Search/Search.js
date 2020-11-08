@@ -25,7 +25,7 @@ function Search() {
         <Grid container className="Search" >
             <Grid item xs={12} style={{width: '100%', padding: '2rem 1rem 2rem 1rem'}}>
                 <img src={MusicorumLogoTransparent} className="Search-logo" alt="logo"/>
-                <p>We are ready to help you</p>
+                <p>We are ready to help you!</p>
                 <SearchBar onSearch={onSearch}/>
             </Grid>
             <SearchCardList results={state.results}/>
