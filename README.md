@@ -1,7 +1,7 @@
 # Musicorum
 Web application allowing the discovery of Deezer's music catalog.
 
-You can see the project at [GitHub IO Musicorum](https://latifaabdullayeva.github.io/musicorum/)
+The source for the MUSICORUM project is at [GitHub IO Musicorum](https://latifaabdullayeva.github.io/musicorum/)
 
 Top:
 - Logo
