@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/latifaabdullayeva/musicorum/static/css/main.753df677.chunk.css",
+    "main.js": "/latifaabdullayeva/musicorum/static/js/main.39469e9d.chunk.js",
+    "main.js.map": "/latifaabdullayeva/musicorum/static/js/main.39469e9d.chunk.js.map",
+    "runtime-main.js": "/latifaabdullayeva/musicorum/static/js/runtime-main.58cc0680.js",
+    "runtime-main.js.map": "/latifaabdullayeva/musicorum/static/js/runtime-main.58cc0680.js.map",
+    "static/js/2.922a2653.chunk.js": "/latifaabdullayeva/musicorum/static/js/2.922a2653.chunk.js",
+    "static/js/2.922a2653.chunk.js.map": "/latifaabdullayeva/musicorum/static/js/2.922a2653.chunk.js.map",
+    "static/js/3.c7ebeed3.chunk.js": "/latifaabdullayeva/musicorum/static/js/3.c7ebeed3.chunk.js",
+    "static/js/3.c7ebeed3.chunk.js.map": "/latifaabdullayeva/musicorum/static/js/3.c7ebeed3.chunk.js.map",
+    "index.html": "/latifaabdullayeva/musicorum/index.html",
+    "static/css/main.753df677.chunk.css.map": "/latifaabdullayeva/musicorum/static/css/main.753df677.chunk.css.map",
+    "static/js/2.922a2653.chunk.js.LICENSE.txt": "/latifaabdullayeva/musicorum/static/js/2.922a2653.chunk.js.LICENSE.txt",
+    "static/media/MLogoTransparent.3a12a2e0.png": "/latifaabdullayeva/musicorum/static/media/MLogoTransparent.3a12a2e0.png",
+    "static/media/MusicorumLogoTransparent.f1e1d33e.png": "/latifaabdullayeva/musicorum/static/media/MusicorumLogoTransparent.f1e1d33e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.58cc0680.js",
+    "static/js/2.922a2653.chunk.js",
+    "static/css/main.753df677.chunk.css",
+    "static/js/main.39469e9d.chunk.js"
+  ]
+}
