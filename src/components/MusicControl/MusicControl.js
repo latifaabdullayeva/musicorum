@@ -58,18 +58,18 @@ function MusicControlCard(props) {
                 </Typography>
             </CardContent>
             <CardContent className={classes.controls}>
-                <IconButton aria-label="previous">
-                    {theme.direction === 'rtl' ? <SkipNextIcon/> : <SkipPreviousIcon/>}
-                </IconButton>
+                {/*<IconButton aria-label="previous">*/}
+                {/*    {theme.direction === 'rtl' ? <SkipNextIcon/> : <SkipPreviousIcon/>}*/}
+                {/*</IconButton>*/}
                 <IconButton aria-label="play/pause" onClick={togglePlay}>
                     <PlayArrowIcon/>
                 </IconButton>
                 <IconButton aria-label="play/pause" onClick={togglePause}>
                     <Pause/>
                 </IconButton>
-                <IconButton aria-label="next">
-                    {theme.direction === 'rtl' ? <SkipPreviousIcon/> : <SkipNextIcon/>}
-                </IconButton>
+                {/*<IconButton aria-label="next">*/}
+                {/*    {theme.direction === 'rtl' ? <SkipPreviousIcon/> : <SkipNextIcon/>}*/}
+                {/*</IconButton>*/}
             </CardContent>
         </Card>
     );
