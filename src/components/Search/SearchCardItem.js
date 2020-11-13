@@ -11,8 +11,8 @@ import clsx from 'clsx';
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
-import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
+// import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+// import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,16 +45,16 @@ function SearchCardItem(props) {
         setExpanded(!expanded);
     };
     console.log(movie)
-    let myAudio = new Audio(movie.preview);
+    // let myAudio = new Audio(movie.preview);
 
     // New features to play songs that have been searched
-    function togglePlay() {
-        myAudio.play();
-    }
-
-    function togglePause() {
-        myAudio.pause();
-    }
+    // function togglePlay() {
+    //     myAudio.play();
+    // }
+    //
+    // function togglePause() {
+    //     myAudio.pause();
+    // }
 
     return (
         <Grid item xs={12} sm={4} md={4} lg={3}>

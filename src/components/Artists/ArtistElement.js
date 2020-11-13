@@ -6,8 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 const useStyles = makeStyles({
     root: {
@@ -36,7 +35,7 @@ function ArtistElement(props) {
     return (
         <Card className={classes.root}>
             <CardActionArea style={{borderRadius: '8px'}}>
-                <Link to="/artistTracks" style={{textDecoration: 'none', color: 'black'}}>
+                {/*<Link to="/artistTracks" style={{textDecoration: 'none', color: 'black'}}>*/}
                     <CardMedia className={classes.media}
                                image={props.cover}
                                src={props.cover}
@@ -47,7 +46,7 @@ function ArtistElement(props) {
                             {props.name}
                         </Typography>
                     </CardContent>
-                </Link>
+                {/*</Link>*/}
                 <FavoriteIcon onClick={clickHandler} style={styles}/>
                 {/*<ShareIcon style={{color: 'rgba(0,0,0,0.5)', margin: '0rem 0rem 0.5rem 0rem'}}/>*/}
             </CardActionArea>
