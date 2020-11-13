@@ -49,7 +49,7 @@ function ArtistElement(props) {
                     </CardContent>
                 </Link>
                 <FavoriteIcon onClick={clickHandler} style={styles}/>
-                <ShareIcon style={{color: 'rgba(0,0,0,0.5)', margin: '0rem 0rem 0.5rem 0rem'}}/>
+                {/*<ShareIcon style={{color: 'rgba(0,0,0,0.5)', margin: '0rem 0rem 0.5rem 0rem'}}/>*/}
             </CardActionArea>
         </Card>
     );
