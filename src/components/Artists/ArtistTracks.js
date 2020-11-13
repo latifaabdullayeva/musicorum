@@ -1,5 +1,6 @@
 import React from 'react';
 
+// The work of component is in Progress (showing track list of an artists that user selects)
 function getArtistTracks(some) {
     console.log(some);
     fetch('https://cors-anywhere.herokuapp.com/' + some + '')
