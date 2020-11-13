@@ -47,6 +47,7 @@ function SearchCardItem(props) {
     console.log(movie)
     let myAudio = new Audio(movie.preview);
 
+    // New features to play songs that have been searched
     function togglePlay() {
         myAudio.play();
     }
@@ -69,8 +70,8 @@ function SearchCardItem(props) {
                                      subtitle={<span>by: {movie.artist.name} </span>}
                                      actionIcon={
                                          <CardActions disableSpacing>
-                                             <PlayCircleFilledIcon style={{color: '#ffffff'}} onClick={togglePlay}/>
-                                             <PauseCircleFilledIcon style={{color: '#ffffff'}} onClick={togglePause}/>
+                                             {/*<PlayCircleFilledIcon style={{color: '#ffffff'}} onClick={togglePlay}/>*/}
+                                             {/*<PauseCircleFilledIcon style={{color: '#ffffff'}} onClick={togglePause}/>*/}
                                              <ExpandMoreIcon style={{color: '#ffffff'}}
                                                              className={clsx(classes.expand, {
                                                                  [classes.expandOpen]: expanded,
