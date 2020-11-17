@@ -5,31 +5,32 @@ The source for the MUSICORUM project is at [GitHub IO Musicorum](https://latifaa
 
 You can look at the description at my [Personal Website](https://www.notion.so/Projects-a222ecd02d4d492bb02297ca611e616e) by choosing Musicorum project
 
-Top:
-- Logo
-- Search item by:
-  - Artists
-  - Songs
-  - Albums
-- User Picture
-  
-Left menu change grid accordingly:
-- Charts
-- Genres
-- Podcasts
+## Navigation menu
 
-Bottom: 
-- Audio Player:
+You can navigate to famous artists, tracks, recent podcasts, and charts. Also, you can explore more of that in the main page.
 
-|  Artist Icon  | Song Name     | Back/Play/Forw | Volume       |
-| ------------- | ------------- | -------------- |------------- |
-|               | Artist Name   |                |              |
+## Exploration
 
-General Structure of UI
+You can explore your favorite artists, their albums and tracks just by typing in the search bar in the main page.
 
-|     Logo      |     Search    |  User Picture |
-| ------------- | ------------- | ------------- |
-| Charts        |    Grid       |    Grid       |
-| Genres        |    Grid       |    Grid       |
-| Podcasts      |    Grid       |    Grid       |
-|               | Music Play    |               |
+Each card contains the details about your search result, find them by expanding the items. The details show the name of artists, their songs, albums, the duration of the tracks and the rank of the downloads.
+
+## Favorite artists
+
+See the list of highly ranked artists and put a pink 💖  to your favorite one.
+
+## Favorite tracks
+
+Media control appears, choose your song and just play it! 😉
+
+## Trending podcasts
+
+Find the best podcasts in the world! See how many fans are currently following each of them. Read more about podcasts, learn more about their main concepts, and highlights.
+
+## Top charts
+
+You can find real-time top playlists, podcasts, albums, and tracks.
+
+## Responsive Web Design
+
+The website is responsive and delivers the best experience for desktop, laptop, tablet, and smartphone devices.
